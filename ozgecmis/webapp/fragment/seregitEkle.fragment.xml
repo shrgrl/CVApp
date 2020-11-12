@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="YENİ SERTİFİKA VE EĞİTİM EKLE" id="seregitFragment">
+		<content>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="{i18n>perId}"/>
+					<Input id="inputperId"/>
+					<Label text="{i18n>perSerEgit}"/>
+					<Input id="inputperSerEgit"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<buttons>
+			<Button text="{i18n>yeniEkleKayit}" press="onseregitEkleKayit" type="Transparent"/>
+			<Button text="{i18n>dialogCikis}" press="onseregitEkleGeri" type="Transparent"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

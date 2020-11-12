@@ -1,0 +1,180 @@
+<mvc:View controllerName="projeler.ozgecmis.controller.Object" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic"
+	xmlns:f="sap.ui.layout.form">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+		<semantic:titleHeading>
+			<Title text="{perIsim}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+				<items>
+					<Panel backgroundDesign="Transparent">
+						<content>
+							<ObjectAttribute title="İŞ ADRESİ" text="{perisAdrc}"/>
+							<ObjectAttribute title="MAIL" text="{perMail}"/>
+						</content>
+					</Panel>
+					<Panel backgroundDesign="Transparent">
+						<content>
+							<ObjectAttribute title="LİSANS" text="{perLisans}"/>
+							<ObjectAttribute title="HAKKINDA" text="{perHakkinda}"/>
+						</content>
+					</Panel>
+					<Panel backgroundDesign="Transparent">
+						<content>
+							<ObjectAttribute title="DOĞUM TARİHİ" text="{path: 'perdTarih', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+							<ObjectAttribute title="UYRUK" text="{perUyruk}"/>
+						</content>
+					</Panel>
+				</items>
+			</FlexBox>
+		</semantic:headerContent>
+		<VBox>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="BİLDİĞİ LİSANLAR" textAlign="Center"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="" type="Transparent" press="onLisanEkle"/>
+						<!--<Button icon="sap-icon://delete" text="" type="Transparent" press="on"/>-->
+						<!--<Button icon="sap-icon://edit" text="" type="Transparent" press="on"/>-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<FlexBox>
+						<Table id="lisanTable" width="auto" items="{ path: '/lisanSet', sorter: { path: 'perId', descending: false } }"
+							noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+							updateFinished=".onUpdateFinished">
+							<columns>
+								<Column>
+									<Text text="{i18n>perLisan}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{perLisan}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</FlexBox>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="SERTİFİKA VE EĞİTİMLER" textAlign="Center"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="" type="Transparent" press="onSerEgitEkle"/>
+						<!--<Button icon="sap-icon://delete" text="" type="Transparent" press="onyeniEkle"/>-->
+						<!--<Button icon="sap-icon://edit" text="" type="Transparent" press="onyeniEkle"/>-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<FlexBox>
+						<Table id="seregitTable" width="auto" items="{ path: '/serEgitSet', sorter: { path: 'perId', descending: false } }"
+							noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+							updateFinished=".onUpdateFinished">
+							<columns>
+								<Column>
+									<Text text="{i18n>perSerEgit}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{perSerEgit}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</FlexBox>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="SAP DENEYİMLERİ" textAlign="Center"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="" type="Transparent" press="onDeneyimEkle"/>
+						<!--<Button icon="sap-icon://delete" text="" type="Transparent" press="onyeniEkle"/>-->
+						<!--<Button icon="sap-icon://edit" text="" type="Transparent" press="onyeniEkle"/>-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<FlexBox>
+						<Table id="deneyimTable" width="auto" items="{ path: '/deneyimSet', sorter: { path: 'perId', descending: false } }"
+							noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+							updateFinished=".onUpdateFinished">
+							<columns>
+								<Column>
+									<Text text="{i18n>perDeneyim}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{perDeneyim}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</FlexBox>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="SAP PROJE DENEYİMLERİ" textAlign="Center"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="" type="Transparent" press="onProjelerEkle"/>
+						<!--<Button icon="sap-icon://delete" text="" type="Transparent" press="onyeniEkle"/>-->
+						<!--<Button icon="sap-icon://edit" text="" type="Transparent" press="onyeniEkle"/>-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<FlexBox>
+						<Table id="projeTable" width="auto" items="{ path: '/projelerSet', sorter: { path: 'perId', descending: false } }"
+							noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+							updateFinished=".onUpdateFinished">
+							<columns>
+								<Column>
+									<Text text="{i18n>projMusteri}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>projTanim}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>projDevamsure}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>projSektor}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>projGorev}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>projSorumluluk}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{projMusteri}"/>
+										<Text text="{projTanim}"/>
+										<Text text="{projDevamsure}"/>
+										<Text text="{projSektor}"/>
+										<Text text="{projGorev}"/>
+										<!--<Text text="{projSorumluluk}"/>-->
+										<Button text="{i18n>detay}" type="Neutral" press="onSorumluluk"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</FlexBox>
+				</content>
+			</Panel>
+		</VBox>
+	</semantic:SemanticPage>
+</mvc:View>

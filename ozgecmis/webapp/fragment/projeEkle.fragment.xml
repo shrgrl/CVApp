@@ -1,0 +1,72 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="YENİ PROJE EKLE" id="projeFragment">
+		<content>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="{i18n>perId}"/>
+					<Input id="inputperId"/>
+					<Label text="{i18n>projMusteri}"/>
+					<Input id="inputprojMusteri"/>
+					<Label text="{i18n>projTanim}"/>
+					<Input id="inputprojTanim"/>
+					<Label text="{i18n>projDevamsure}"/>
+					<Input id="inputprojDevamsure"/>
+					<Label text="{i18n>projSektor}"/>
+					<Input id="inputprojSektor"/>
+					<Label text="{i18n>projGorev}"/>
+					<Input id="inputprojGorev"/>
+					<Label text="{i18n>projSorumluluk}"/>
+					<Button icon="sap-icon://add" text="Sorumluluk Ekle" type="Transparent" press="onSorumlulukEkle"/>
+					<!--<Input id="inputprojSorumluluk"/>-->
+					<VBox>
+						<!--<HBox>-->
+						<!--	<Button icon="sap-icon://add" text="" type="Transparent" press="onSorumlulukEkle"/>-->
+						<!--	<Button icon="sap-icon://delete" text="" type="Transparent" press="onSorumlulukSil"/>-->
+						<!--</HBox>-->
+						<!--<HBox>-->
+						<!--	<Button text="{i18n>detay}" type="Neutral" press="onSorumluluk"/>-->
+						<!--	<Button icon="sap-icon://edit" text="" type="Transparent" press="onSorumlulukEdit"/>-->
+						<!--</HBox>-->
+						<!--<Panel width="auto" class="sapUiResponsiveMargin">-->
+						<!--	<headerToolbar>-->
+						<!--		<OverflowToolbar>-->
+						<!--			<Title text="SORUMLULUK EKLE" textAlign="Center"/>-->
+						<!--			<ToolbarSpacer/>-->
+						<!--			<Button icon="sap-icon://add" text="" type="Transparent" press="onSorumlulukEkle"/>-->
+						<!--<Button icon="sap-icon://delete" text="" type="Transparent" press="onyeniEkle"/>-->
+						<!--<Button icon="sap-icon://edit" text="" type="Transparent" press="onyeniEkle"/>-->
+						<!--		</OverflowToolbar>-->
+						<!--	</headerToolbar>-->
+						<!--<content>-->
+						<!--	<FlexBox>-->
+						<!--		<Table id="seregitTable" width="auto" items="{ path: '/sorumlulukSet', sorter: { path: 'perId', descending: false } }"-->
+						<!--			noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"-->
+						<!--			updateFinished=".onUpdateFinished">-->
+						<!--			<columns>-->
+						<!--				<Column>-->
+						<!--					<Text text="{i18n>projSorumluluk}"/>-->
+						<!--				</Column>-->
+						<!--			</columns>-->
+						<!--			<items>-->
+						<!--				<ColumnListItem>-->
+						<!--					<cells>-->
+						<!--						<Text text="{projSorumluluk}"/>-->
+						<!--					</cells>-->
+						<!--				</ColumnListItem>-->
+						<!--			</items>-->
+						<!--		</Table>-->
+						<!--	</FlexBox>-->
+						<!--</content>-->
+						<!--</Panel>-->
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<buttons>
+			<Button text="{i18n>yeniEkleKayit}" press="onProjelerEkleKayit" type="Transparent"/>
+			<Button text="{i18n>dialogCikis}" press="onProjelerEkleGeri" type="Transparent"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

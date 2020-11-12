@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="YENİ KULLANICI EKLE" id="yeniEkleFragment">
+		<content>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="{i18n>perId}"/>
+					<Input id="inputperId"/>
+					<Label text="{i18n>perIsim}"/>
+					<Input id="inputperIsim"/>
+					<Label text="{i18n>perdTarih}"/>
+					<DatePicker id="inputperdTarih"/>
+					<Label text="{i18n>perMail}"/>
+					<Input id="inputperMail"/>
+					<Label text="{i18n>perisAdrc}"/>
+					<Input id="inputperisAdrc"/>
+					<Label text="{i18n>perHakkinda}"/>
+					<Input id="inputperHakkinda"/>
+					<Label text="{i18n>perLisans}"/>
+					<Input id="inputperLisans"/>
+					<Label text="{i18n>perUyruk}"/>
+					<Input id="inputperUyruk"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<buttons>
+			<Button text="{i18n>yeniEkleKayit}" press="onyeniEkleKayit" type="Transparent"/>
+			<Button text="{i18n>dialogCikis}" press="onyeniEkleGeri" type="Transparent"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

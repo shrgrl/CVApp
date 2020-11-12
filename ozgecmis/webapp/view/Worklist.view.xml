@@ -1,0 +1,61 @@
+<mvc:View controllerName="projeler.ozgecmis.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text="{i18n>worklistTitle}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<VBox>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="KULLANICI BİLGİLERİ" textAlign="Center"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="" type="Transparent" press="onyeniEkle"/>
+						<!--<Button icon="sap-icon://delete" text="" type="Transparent" press="on"/>-->
+						<!--<Button icon="sap-icon://edit" text="" type="Transparent" press="on"/>-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<FlexBox>
+						<Table id="table" width="auto" items="{ path: '/kisiselSet', sorter: { path: 'perIsim', descending: false } }"
+							noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+							updateFinished=".onUpdateFinished">
+							<columns>
+								<Column>
+									<Text text="{i18n>perIsim}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>perId}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation" press=".onPress">
+									<cells>
+										<ObjectIdentifier title="{perIsim}"/>
+										<ObjectNumber unit="{perId}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</FlexBox>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="DENEME BUTONLARI" textAlign="Center"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<Button text="LİSAN EKLE" type="Transparent" press="onLisanEkle"/>
+					<Button text="SERTİFİKA VE EĞİTİM EKLE" type="Transparent" press="onSerEgitEkle"/>
+					<Button text="DENEYİM EKLE" type="Transparent" press="onDeneyimEkle"/>
+					<Button text="PROJE EKLE" type="Transparent" press="onProjelerEkle"/>
+					<Button text="SORUMLULUK EKLE" type="Transparent" press="onSorumlulukEkle"/>
+					<Button text="SORUMLULUKLARI GÖSTER" type="Transparent" press="onSorumluluk"/>
+				</content>
+			</Panel>
+			</VBox>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>
